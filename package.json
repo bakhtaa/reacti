@@ -1,0 +1,24 @@
+{
+  "name": "reacti",
+  "version": "1.0.0",
+  "description": "![alt text](image.png)\r ![alt text](image-1.png)\r ![alt text](image-2.png)",
+ 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakhtaa/reacti.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bakhtaa/reacti/issues"
+  },
+  "homepage": "https://github.com/bakhtaa/reacti#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
