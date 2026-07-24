@@ -1,17 +1,39 @@
-const header= React.createElement("h1", {id: "waw"}, "asslema ya hmema");
-console.log(header); //gives us back a react element at the end of the day
 
-//root.render(header);
-//create nesteed react element 
-//creating react nested elements: 
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const parent = React.createElement("div", {id: "parent"},
-     [React.createElement("div", {id: "child1"},
-     [React.createElement("h1", {}, "i'm the h1 tag of child 1") , React.createElement("h2", {}, "i'm the h2 tag of child 1")
-]), React.createElement("div", {id: "child2"},
-     [React.createElement("h1", {}, "i'm the h1 tag of child 2") , React.createElement("h2", {}, "i'm the h2 tag of child2")
-])]
-); 
-const root= ReactDOM.createRoot(document.getElementById("root"));
+//React functionnal Component is just a react function which returns some piece of jsx:=> returns a react element
 
-root.render(parent);
+/*
+header
+-logo / home_butt about_butt panier_butt
+body 
+-search butt
+-Cards Container:
+   -restaurant cards 
+footer
+-copyright / links / contact / adress
+*/
+
+
+
+
+
+const Title = ()=>{
+     return (
+     <div>
+          <h2>ija njarbou nrundriw component fi west component</h2>
+     </div>)
+}
+const HeaderComponent=()=>{
+     return (
+          <div>
+<h1> awel react component</h1>
+<Title/>
+          </div>
+     ) 
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<HeaderComponent/>);
