@@ -1,5 +1,6 @@
 
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 import { useState , useEffect} from "react";
 
 
@@ -39,7 +40,7 @@ const [recipec, setrecipes]= useState([]);
           { recipec.length!= 0 ? (
            recipec.map((recipe) => {
             return( <RestaurantCard  id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} />) })
-           ) : <h1></h1>
+           ) : <Shimmer/>
           
           }
          </div>

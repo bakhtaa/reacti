@@ -87,3 +87,35 @@ body {
 .card-component h4 {
     margin: 8px 0;
 }
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.shimmer {
+    width: 220px;
+    height: 320px;
+    border-radius: 8px;
+    background: linear-gradient(
+        90deg,
+        #e0e0e0 25%,
+        #f2f2f2 50%,
+        #e0e0e0 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    from {
+        background-position: 200% 0;
+    }
+
+    to {
+        background-position: -200% 0;
+    }
+}
