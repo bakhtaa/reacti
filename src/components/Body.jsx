@@ -1,15 +1,47 @@
 
 import RestaurantCard from "./RestaurantCard";
+import { useState , useEffect} from "react";
+
+
+
 
 
 const Body=()=>{
+
+const [recipec, setrecipes]= useState([]);
+
+     useEffect(()=>{
+          console.log("baed ma lpage trendri we will fetch the data");
+          fetchData();
+
+     }, []);
+
+
+     const fetchData=async ()=>{
+          const response= await   fetch('https://dummyjson.com/recipes');
+          const {recipes}= await response.json();
+          setrecipes(recipes);
+          console.log(recipes);
+          console.log(recipec);
+     }
+
      return (
           <div className="body">
-         <div className="search">search</div>
+         <div className="filter">
+        <button  className="btn" onClick={()=>{
+          console.log("weyy");
+        }}>
+       top ratedd ya seeehbiii
+        </button>
+         </div>
          <div className="res-container">
-          <RestaurantCard  title="momento" text="restau lhouma" review="5 stars" time= "35minutas" img="https://images.ctfassets.net/trvmqu12jq2l/6FV4Opt7wUyR91t2FXyOIr/f32972fce10fc87585e831b334ea17ef/header.jpg?q=60&w=1200&h=1073&fm=webp&f=faces&fit=fill" />
-         <RestaurantCard  title="chapati msakra" text="restau lhouma" review="5 stars" time= "6minutas" img="https://lh3.googleusercontent.com/grass-cs/ACvplmP5gan_vNj3AFojkiaPmQy-S6uJtsjPNv9PWgL2PICDx5NLSF8YSK7u9kRQLJq03-vVuwAYUljESCvsQiAyUweqcY0OhOMoY2vk4DOhAFpBzY7Ts12S0WbZ5urYqiiMsle_NwGzoXfYybFX=s294-w294-h220-n-k-no" />
           
+          { recipec.length!= 0 ? (
+           recipec.map((recipe) => {
+            return( <RestaurantCard  id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} />) })
+           ) : <h1></h1>
+          
+          }
          </div>
           </div>
      )
