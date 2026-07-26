@@ -1,6 +1,6 @@
 
 import RestaurantCard from "./RestaurantCard";
-import Shimmer from "./Shimmer";
+import Shimmer from "./Shimmer.jsx";
 import { useState , useEffect} from "react";
 
 
@@ -10,6 +10,9 @@ import { useState , useEffect} from "react";
 const Body=()=>{
 
 const [recipec, setrecipes]= useState([]);
+const [search, setsearch]= useState("");
+const [filteredrecipes,filterrecipes]=useState([]);
+//whenever a state variable update , react triggers a render of the component
 
      useEffect(()=>{
           console.log("baed ma lpage trendri we will fetch the data");
@@ -28,12 +31,28 @@ const [recipec, setrecipes]= useState([]);
 
      return (
           <div className="body">
+            
          <div className="filter">
-        <button  className="btn" onClick={()=>{
-          console.log("weyy");
+       
+        <input    type="text"  value= {search} onChange={(event)=>
+        {
+          setsearch(event.target.value); 
+          
+          
         }}>
-       top ratedd ya seeehbiii
+      
+        </input> 
+        <button onClick={
+          ()=>{
+               //filter the restaurants cards and update the UI 
+               console.log(search);
+               filteredrecipes(recipec.filter((element)=>{element in content}));
+
+          }
+        }>
+          search
         </button>
+       
          </div>
          <div className="res-container">
           
