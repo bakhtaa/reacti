@@ -25,6 +25,7 @@ const [filteredrecipes,filterrecipes]=useState([]);
           const response= await   fetch('https://dummyjson.com/recipes');
           const {recipes}= await response.json();
           setrecipes(recipes);
+          filterrecipes(recipes);
           console.log(recipes);
           console.log(recipec);
      }
@@ -46,7 +47,10 @@ const [filteredrecipes,filterrecipes]=useState([]);
           ()=>{
                //filter the restaurants cards and update the UI 
                console.log(search);
-               filteredrecipes(recipec.filter((element)=>{element in content}));
+               filterrecipes(recipec.filter((recipe)=>{return recipe.name.toLowerCase().includes(search)}));
+               console.log(filteredrecipes);
+               
+            
 
           }
         }>
