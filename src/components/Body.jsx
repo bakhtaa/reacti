@@ -38,7 +38,17 @@ const [filteredrecipes,filterrecipes]=useState([]);
         <input    type="text"  value= {search} onChange={(event)=>
         {
           setsearch(event.target.value); 
-          
+               //filter the restaurants cards and update the UI 
+               if(search=""){
+                filteredrecipes(recipec);
+               }
+               else{
+               console.log(search);
+               filterrecipes(recipec.filter((recipe)=>{return recipe.name.toLowerCase().includes(search)}));
+               console.log(filteredrecipes);
+               }
+              
+
           
         }}>
       
@@ -60,8 +70,8 @@ const [filteredrecipes,filterrecipes]=useState([]);
          </div>
          <div className="res-container">
           
-          { recipec.length!= 0 ? (
-           recipec.map((recipe) => {
+          { filteredrecipes.length!= 0 ? (
+           filteredrecipes.map((recipe) => {
             return( <RestaurantCard  id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} />) })
            ) : <Shimmer/>
           
