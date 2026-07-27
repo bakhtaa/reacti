@@ -39,8 +39,8 @@ const [filteredrecipes,filterrecipes]=useState([]);
         {
           setsearch(event.target.value); 
                //filter the restaurants cards and update the UI 
-               if(search=""){
-                filteredrecipes(recipec);
+               if(event.target.value==""){
+                filtererrecipes(recipec);
                }
                else{
                console.log(search);
