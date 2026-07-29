@@ -39,14 +39,12 @@ const [filteredrecipes,filterrecipes]=useState([]);
         {
           setsearch(event.target.value); 
                //filter the restaurants cards and update the UI 
-               if(event.target.value==""){
-                filtererrecipes(recipec);
-               }
-               else{
+             
+               
                console.log(search);
-               filterrecipes(recipec.filter((recipe)=>{return recipe.name.toLowerCase().includes(search)}));
+               filterrecipes(recipec.filter((recipe)=>{return recipe.name.toLowerCase().includes(event.target.value.toLowerCase())}));
                console.log(filteredrecipes);
-               }
+               
               
 
           
@@ -72,7 +70,7 @@ const [filteredrecipes,filterrecipes]=useState([]);
           
           { filteredrecipes.length!= 0 ? (
            filteredrecipes.map((recipe) => {
-            return( <RestaurantCard  id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} />) })
+            return( <RestaurantCard         key={recipe.id} id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} />) })
            ) : <Shimmer/>
           
           }
