@@ -4,7 +4,8 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Contact from "./components/Contact";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Error from "./components/Error";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 
 
@@ -15,7 +16,13 @@ const Applayout= ()=>{
      return (
           <div className="app">
                <Header/> 
-               <Body/>
+  {/*  if path is / then we should have the body component
+  if path is /aboout we should have the child component 
+  if path is contact we should have contact component */ }
+       <Outlet/>
+
+
+             
           </div>
      )
 }
@@ -28,10 +35,14 @@ const appRouter=createBrowserRouter(
      [
           {path : '/', 
           element: <Applayout/>, 
-          errorElement: <Error/>
+          children: [
 
-          }, 
-          {
+                {
+               index:true, 
+               element: <Body/>
+               
+          },
+           {
                path : '/about', 
                element: <About/>
                
@@ -40,6 +51,11 @@ const appRouter=createBrowserRouter(
                element: <Contact/>
                
           }
+          ], 
+          errorElement: <Error/>
+
+          }, 
+          
 
 
      ]
