@@ -16,7 +16,7 @@ const RestaurantMenu=()=>{
         }
     return(
         <div className="menu">
-            <h1> </h1>
+            <h1>gogo</h1>
             <h2>menu</h2>
             <ul>
                 <li>biryani</li>

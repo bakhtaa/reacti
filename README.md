@@ -12,4 +12,4 @@ _HMR : Hot Module Replacement using File Watching Algorithm - (written in C++)
 ![alt text](image-7.png)
 ![alt text](image-8.png)
 ![alt text](image-9.png)
-
+useState est le mécanisme qui permet à React de synchroniser les données (state) avec l'interface utilisateur (UI).
