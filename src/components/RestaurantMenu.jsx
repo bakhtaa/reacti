@@ -16,10 +16,10 @@ const RestaurantMenu=()=>{
         }
     return(
         <div className="menu">
-            <h1>gogo</h1>
-            <h2>menu</h2>
+           <h1>{resInfo?.[0]?.name} </h1>
+            <h2>{resInfo?.[0]?.cuisine} </h2>
             <ul>
-                <li>biryani</li>
+                <li>{resInfo?.[0]?.ingredients.join(',')}</li>
                 <li>burgers</li>
                 <li>Diet coke</li>
             </ul>
