@@ -2,6 +2,7 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer.jsx";
 import { useState , useEffect} from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -70,7 +71,7 @@ const [filteredrecipes,filterrecipes]=useState([]);
           
           { filteredrecipes.length!= 0 ? (
            filteredrecipes.map((recipe) => {
-            return( <RestaurantCard         key={recipe.id} id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} />) })
+            return( <Link key={recipe.id}  to={'/restaurants/'+recipe.id}><RestaurantCard   id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} /> </Link> )})
            ) : <Shimmer/>
           
           }
