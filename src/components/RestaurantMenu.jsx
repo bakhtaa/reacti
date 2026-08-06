@@ -1,29 +1,35 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const RestaurantMenu=()=>{
 
     const [resInfo, setResInfo]= useState(null); 
+    const {resId} = useParams();
 
     useEffect(()=>{
       fetchMenu();
     }, []);
     const fetchMenu=async ()=>{
-        const data = await fetch("https://dummyjson.com/recipes");
+        const data = await fetch(`https://dummyjson.com/recipes/${resId}`);
         const json =await data.json();
         console.log(json);
-        setResInfo(json.recipes); 
+        setResInfo(json); 
         }
     return(
         <div className="menu">
-           <h1>{resInfo?.[0]?.name} </h1>
-            <h2>{resInfo?.[0]?.cuisine} </h2>
-            <ul>
-                <li>{resInfo?.[0]?.ingredients.join(',')}</li>
-                <li>burgers</li>
-                <li>Diet coke</li>
-            </ul>
+          
+                <ul key={resInfo.id} z>
+                    <li>{resInfo.name}   </li>
+                    <li> {resInfo.cuisine}</li>
+                <li>{resInfo.ingredients.join(',')}</li>
 
+                  </ul>
+            
+        
+        
+        
+          
         </div>
     )
 }
