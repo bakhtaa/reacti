@@ -6,13 +6,11 @@ import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu=()=>{
 
-    const [resInfo, setResInfo]= useState(null); 
     const {resId} = useParams();
     
 const json= useRestaurantMenu();
 
-        setResInfo(json); 
-        
+       
         if (resInfo === null) {
     return <Shimmer/>;
 }
@@ -25,11 +23,7 @@ const json= useRestaurantMenu();
                 <li>{resInfo.ingredients.join(',')}</li>
 
                   </ul>
-            
         
-        
-        
-          
         </div>
     )
 }
