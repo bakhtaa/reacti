@@ -18,3 +18,5 @@ useState est le mécanisme qui permet à React de synchroniser les données (sta
 behind the scenes , the Link component of react is using <href a tag>
 
 ![alt text](image-10.png)
+
++useParams est utilisé pour extraire des données de l'url
