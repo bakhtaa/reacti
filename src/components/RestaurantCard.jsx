@@ -1,4 +1,7 @@
 
+
+
+
 const RestaurantCard=({title,text,review,time, img})=>{
      return(
           <div className="card-component">
