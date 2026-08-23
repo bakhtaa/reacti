@@ -1,9 +1,9 @@
 
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from  "./RestaurantCard";
+import PromotedRestaurantCard from  "./RestaurantCard";
 import Shimmer from "./Shimmer.jsx";
 import { useState , useEffect} from "react";
 import { Link } from "react-router-dom";
-
 
 
 
@@ -13,8 +13,11 @@ const Body=()=>{
 const [recipec, setrecipes]= useState([]);
 const [search, setsearch]= useState("");
 const [filteredrecipes,filterrecipes]=useState([]);
-//whenever a state variable update , react triggers a render of the component
 
+
+const PromotedCard= PromotedRestaurantCard(RestaurantCard);
+//whenever a state variable update , react triggers a render of the component
+console.log(filteredrecipes);
      useEffect(()=>{
           console.log("baed ma lpage trendri we will fetch the data");
           fetchData();

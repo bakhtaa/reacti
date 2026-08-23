@@ -15,4 +15,19 @@ const RestaurantCard=({title,text,review,time, img})=>{
      )
 }
 
+
+
+export const PromotedRestauCard=(RestaurantCard)=>{
+  return(
+     ()=>{
+     return(
+       <div>
+        <label>promoted</label>  
+        <RestaurantCard/>
+       </div>
+          )
+     }
+  )
+}
+
 export default RestaurantCard;
