@@ -20,3 +20,5 @@ behind the scenes , the Link component of react is using <href a tag>
 ![alt text](image-10.png)
 
 +useParams est utilisé pour extraire des données de l'url
++we used lazy and suspense from the react library to make the lazy loading of components dynamically possible.
+![alt text](image-11.png)
