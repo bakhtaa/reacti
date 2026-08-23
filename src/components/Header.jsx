@@ -22,7 +22,10 @@ const [btn, setlog]= useState("log in");
 </li>
 
 <li>
-    <Link to="/contact">Contact Us</Link>
+    <Link to="/about">About</Link>
+</li>
+<li>
+    <Link to="/Grocery">Grocery </Link>
 </li>
 
 <li>

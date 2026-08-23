@@ -6,7 +6,8 @@ import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu=()=>{
 
-    const {resId} = useParams();
+const {resId} = useParams();
+//useParams permet l'extarction des paramètres de la route
     
 const json= useRestaurantMenu();
 

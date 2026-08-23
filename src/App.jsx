@@ -8,8 +8,10 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Grocery from "./components/Grocery";
 
 
+//chunking , dynamic bundling, code splitting, lazy loading
 
 
 
@@ -55,7 +57,11 @@ const appRouter=createBrowserRouter(
           {
                path: '/restaurants/:resId',
                element: <RestaurantMenu/>
-          }
+          },
+           {
+               path: '/grocery',
+               element: <Grocery/>
+          },
           ], 
           errorElement: <Error/>
 
