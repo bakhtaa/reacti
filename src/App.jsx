@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,12 +8,14 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Grocery from "./components/Grocery";
+//import Grocery from "./components/Grocery";
 
 
 //chunking , dynamic bundling, code splitting, lazy loading
 
-
+const Grocery= lazy(()=>{
+     import('./components/Grocery');
+})
 
 const Applayout= ()=>{
      return (
