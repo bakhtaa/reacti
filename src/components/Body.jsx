@@ -61,9 +61,6 @@ console.log(filteredrecipes);
                console.log(search);
                filterrecipes(recipec.filter((recipe)=>{return recipe.name.toLowerCase().includes(search)}));
                console.log(filteredrecipes);
-               
-            
-
           }
         }>
           search
@@ -74,6 +71,9 @@ console.log(filteredrecipes);
           
           { filteredrecipes.length!= 0 ? (
            filteredrecipes.map((recipe) => {
+               if(recipe.cuisine=="italian"){
+                    return(0);
+               }
             return( <Link key={recipe.id}  to={'/restaurants/'+recipe.id}><RestaurantCard   id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} /> </Link> )})
            ) : <Shimmer/>
           
