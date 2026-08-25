@@ -19,11 +19,11 @@ const RestaurantCard=({title,text,review,time, img})=>{
 
 export const PromotedRestauCard=(RestaurantCard)=>{
   return(
-     ()=>{
+     (props)=>{
      return(
        <div>
         <label>promoted</label>  
-        <RestaurantCard/>
+        <RestaurantCard {...props}/>
        </div>
           )
      }
