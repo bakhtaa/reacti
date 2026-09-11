@@ -1,6 +1,6 @@
 
 import RestaurantCard from  "./RestaurantCard";
-import PromotedRestaurantCard from  "./RestaurantCard";
+import {PromotedRestauCard } from  "./RestaurantCard";
 import Shimmer from "./Shimmer.jsx";
 import { useState , useEffect} from "react";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const [search, setsearch]= useState("");
 const [filteredrecipes,filterrecipes]=useState([]);
 
 
-const PromotedCard= PromotedRestaurantCard(RestaurantCard);
+const PromotedCard= PromotedRestauCard(RestaurantCard);
 //whenever a state variable update , react triggers a render of the component
 console.log(filteredrecipes);
      useEffect(()=>{
@@ -72,12 +72,13 @@ console.log(filteredrecipes);
           { filteredrecipes.length!= 0 ? (
            filteredrecipes.map((recipe) => {
                if(recipe.cuisine=="italian"){
-                   return(<Link key={recipe.id}  to={'/restaurants/'+recipe.id}><RestaurantCard   {...recipe} /> </Link> );
+                     return( <Link key={recipe.id}  to={'/restaurants/'+recipe.id}><PromotedCard   {...recipe} /> </Link> );
+                   
                }
-            return( <Link key={recipe.id}  to={'/restaurants/'+recipe.id}><PromotedCard   id= {recipe.id} title={recipe.name} text={recipe.ingredients} review={recipe.rating} time={recipe.prepTimeMinutes} img={recipe.image} /> </Link> )})
+            return(<Link key={recipe.id}  to={'/restaurants/'+recipe.id}><RestaurantCard {...recipe} /> </Link> )})
            ) : <Shimmer/>
           
-          }
+      }
          </div>
           </div>
      )
