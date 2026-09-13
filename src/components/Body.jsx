@@ -71,14 +71,18 @@ console.log(filteredrecipes);
           
           { filteredrecipes.length!= 0 ? (
            filteredrecipes.map((recipe) => {
-               if(recipe.cuisine=="italian"){
+               if(recipe.cuisine=="Italian"){
                      return( <Link key={recipe.id}  to={'/restaurants/'+recipe.id}><PromotedCard   {...recipe} /> </Link> );
                    
                }
+              
             return(<Link key={recipe.id}  to={'/restaurants/'+recipe.id}><RestaurantCard {...recipe} /> </Link> )})
            ) : <Shimmer/>
-          
+    
       }
+      
+               
+      
          </div>
           </div>
      )
